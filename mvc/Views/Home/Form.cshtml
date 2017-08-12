@@ -1,0 +1,63 @@
+﻿@model mvc.Models.FormModel
+@{
+    ViewBag.Title = "Form";
+}
+
+<h2>Form sdfsfwewewe</h2>
+
+<style type="text/css">
+    .check {
+        opacity: 0.5;
+        color: #996;
+    }
+</style>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            alert('hi');
+        })
+
+        $(document).on("click", ".img-check", function () {          
+            var current = $(this);
+            $(".img-check").not(current).each(function () {
+                //alert(this.name);
+                $(this).removeClass("check");
+            })
+            if (current.hasClass('check')) {
+                $(this).removeClass("check");
+                $("#SelectedValue").val("");
+            }
+            else {
+                $(this).toggleClass("check");
+                $("#SelectedValue").val(this.name);
+            }        
+            alert($("#SelectedValue").val());
+        });
+
+        function OnSuccess(response) { alert('success'); }
+        function OnFailure(response) { alert('fail'); }
+        function OnComplete(response) { alert('complete'); }
+    </script>
+}
+
+
+@using (Ajax.BeginForm("_form", "Home", new AjaxOptions()
+{
+    HttpMethod = "POST",
+    OnSuccess = "OnSuccess()",
+    OnFailure = "OnFailure()",
+    OnComplete = "OnComplete()",
+    UpdateTargetId = "formHorizontal",
+    InsertionMode = InsertionMode.Replace
+}))
+{
+
+    Html.AntiForgeryToken();
+    Html.RenderPartial("_form", Model);
+}
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
