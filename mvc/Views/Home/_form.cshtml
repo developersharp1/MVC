@@ -1,4 +1,7 @@
-﻿@model mvc.Models.FormModel
+﻿@using mvc.Models;
+@using Newtonsoft.Json;
+
+@model mvc.Models.FormModel
 
 @{
     Layout = null;
@@ -18,6 +21,9 @@
 
     <div class="form-group">
         <div class="col-md-10">
+
+            @{string OptionListStr = JsonConvert.SerializeObject(Model.optionList);}
+
             @for (int i = 0; i < Model.optionList.Count; i++)
             {
                 <div>
@@ -26,19 +32,23 @@
                             <img src="@Model.optionList[i].ImageUrl" alt="..." class="img-thumbnail img-check" name="@Model.optionList[i].Name">
                             @* <input type="checkbox" value="val1" autocomplete="off">*@
                         </label>
+
                     </div>
                 </div>
             }
+
             @Html.HiddenFor(Model => Model.UserAnswer, new { @id = "SelectedValue" })
+            @Html.ValidationMessageFor(Model => Model.UserAnswer, "", new { @class = "text-danger", @id="UserAnswerVal" })
             @Html.HiddenFor(Model => Model.QuestionText)
             @Html.HiddenFor(Model => Model.QuestionNumber)
+            @Html.Hidden("OptionListStr", OptionListStr)
+
         </div>
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="submit" class="btn btn-default" />
+            <input type="submit" value="submit" class="btn btn-default" id="submit" />
         </div>
     </div>
 </div>
-
 

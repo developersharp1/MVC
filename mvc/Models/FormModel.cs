@@ -13,6 +13,8 @@ namespace mvc.Models
 
         public List<CheckModel> optionList { get; set; }
         //public int LastIndex { get; set; }
+
+        [Required(ErrorMessage = "Please select a option")]
         public string UserAnswer { get; set; }
     }
 

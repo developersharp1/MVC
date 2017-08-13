@@ -20,8 +20,7 @@
 
         $(document).on("click", ".img-check", function () {          
             var current = $(this);
-            $(".img-check").not(current).each(function () {
-                //alert(this.name);
+            $(".img-check").not(current).each(function () {              
                 $(this).removeClass("check");
             })
             if (current.hasClass('check')) {
@@ -31,10 +30,11 @@
             else {
                 $(this).toggleClass("check");
                 $("#SelectedValue").val(this.name);
+                $("#UserAnswerVal").text("");
             }        
             alert($("#SelectedValue").val());
         });
-
+      
         function OnSuccess(response) { alert('success'); }
         function OnFailure(response) { alert('fail'); }
         function OnComplete(response) { alert('complete'); }
@@ -52,7 +52,8 @@
     InsertionMode = InsertionMode.Replace
 }))
 {
-
+    //Html.EnableClientValidation(true);
+    //Html.EnableUnobtrusiveJavaScript(true);
     Html.AntiForgeryToken();
     Html.RenderPartial("_form", Model);
 }

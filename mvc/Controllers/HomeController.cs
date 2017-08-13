@@ -65,13 +65,21 @@ namespace mvc.Controllers
             {
                 ModelState.Clear();
                 int QuestionNumber = model.QuestionNumber + 1;
+               
                 var list = list1.GroupBy(x => x.Id, (key, g) => new FormModel { QuestionNumber = QuestionNumber, optionList = g.ToList() }).ToList();
+                if (QuestionNumber >= list.Count)
+                {
+                    return PartialView("_QuizEnd");
+                }
                 model = new FormModel();
                 model = list[QuestionNumber - 1];
                 model.QuestionText = "Select any one 232";               
                 return PartialView(model);
             }
-
+            string OptionListStr = Request.Form["OptionListStr"];
+            List<CheckModel> objList = new List<CheckModel>();
+            objList = JsonConvert.DeserializeObject<List<CheckModel>>(OptionListStr);
+            model.optionList = objList;
             return PartialView(model);
         }
     }
