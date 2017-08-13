@@ -203,6 +203,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\FormModel.cs" />
+    <Compile Include="Models\HTMLFormModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -291,6 +292,7 @@
     <Content Include="Views\Home\Form.cshtml" />
     <Content Include="Views\Home\_form.cshtml" />
     <Content Include="Views\Home\_QuizEnd.cshtml" />
+    <Content Include="Views\Home\HTMLForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

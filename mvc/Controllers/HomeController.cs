@@ -82,5 +82,22 @@ namespace mvc.Controllers
             model.optionList = objList;
             return PartialView(model);
         }
+
+        [HttpGet]
+        public ActionResult HTMLForm()
+        {
+            return View(new HTMLFormModel());
+        }
+
+        [HttpPost]
+        public ActionResult HTMLForm(HTMLFormModel obj)
+        {
+            if (ModelState.IsValid)
+            {
+                ModelState.Clear();
+                return View(new HTMLFormModel());
+            }
+            return View(obj);
+        }
     }
 }
