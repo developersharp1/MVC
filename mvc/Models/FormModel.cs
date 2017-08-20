@@ -8,6 +8,14 @@ namespace mvc.Models
 {
     public class FormModel
     {
+        public FormModel() {
+
+            QuestionText = "";
+            QuestionNumber = 0;
+            optionList = new List<CheckModel>();
+            UserAnswer = "";
+        }
+
         public string QuestionText { get; set; }
         public int QuestionNumber { get; set; }
 
@@ -21,6 +29,13 @@ namespace mvc.Models
 
     public class CheckModel
     {
+        public CheckModel() {
+
+            Id = 0;
+            Name = "";
+            Checked = false;
+            ImageUrl = "";
+        }
         public int Id
         {
             get;

@@ -8,6 +8,8 @@ using Newtonsoft.Json;
 
 namespace mvc.Controllers
 {
+    [SessionTimeout]
+    [CustomError]
     public class HomeController : Controller
     {
         List<CheckModel> list1 = new List<CheckModel>
@@ -33,6 +35,16 @@ namespace mvc.Controllers
 
         public ActionResult Index()
         {
+
+            try
+            {
+                var a = Convert.ToDecimal("1") / Convert.ToDecimal("0");
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
             return View();
         }
 
@@ -61,6 +73,15 @@ namespace mvc.Controllers
         [HttpPost]
         public PartialViewResult _form(FormModel model)
         {
+            //try
+            //{
+            //  var a = Convert.ToDecimal("1") / Convert.ToDecimal("0");
+            //}
+            //catch (Exception ex)
+            //{
+
+            //    throw ex;
+            //}
             if (ModelState.IsValid)
             {
                 ModelState.Clear();
