@@ -36,15 +36,15 @@ namespace mvc.Controllers
         public ActionResult Index()
         {
 
-            try
-            {
-                var a = Convert.ToDecimal("1") / Convert.ToDecimal("0");
-            }
-            catch (Exception ex)
-            {
+            //try
+            //{
+            //    var a = Convert.ToDecimal("1") / Convert.ToDecimal("0");
+            //}
+            //catch (Exception ex)
+            //{
 
-                throw ex;
-            }
+            //    throw ex;
+            //}
             return View();
         }
 
@@ -119,6 +119,18 @@ namespace mvc.Controllers
                 return View(new HTMLFormModel());
             }
             return View(obj);
+        }
+
+        public ActionResult FileUpload()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult FileUpload(UploadModel model, HttpPostedFileBase file)
+        {
+            HttpPostedFileBase file1 = Request.Files["ImageData"];
+            return View();
         }
     }
 }
