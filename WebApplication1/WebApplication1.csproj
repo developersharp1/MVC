@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B8C30719-0C5D-4F7D-BFD0-1B7B07245102}</ProjectGuid>
+    <ProjectGuid>{45F99A15-674C-4760-B6A2-15BFFF88BFA2}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>mvc</RootNamespace>
-    <AssemblyName>mvc</AssemblyName>
+    <RootNamespace>WebApplication1</RootNamespace>
+    <AssemblyName>WebApplication1</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -196,20 +196,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\CustomErrorAttribute.cs" />
-    <Compile Include="Models\FormModel.cs" />
-    <Compile Include="Models\HTMLFormModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\SessionTimeoutAttribute.cs" />
-    <Compile Include="Models\UploadModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -220,39 +214,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\LoadingIndicator.png" />
-    <Content Include="Images\nature0.JPG" />
-    <Content Include="Images\nature1.JPG" />
-    <Content Include="Images\nature10.jpg" />
-    <Content Include="Images\nature11.jpg" />
-    <Content Include="Images\nature12.jpg" />
-    <Content Include="Images\nature13.jpg" />
-    <Content Include="Images\nature14.jpg" />
-    <Content Include="Images\nature15.jpg" />
-    <Content Include="Images\nature2.JPG" />
-    <Content Include="Images\nature3.JPG" />
-    <Content Include="Images\nature4.JPG" />
-    <Content Include="Images\nature5.JPG" />
-    <Content Include="Images\nature6.JPG" />
-    <Content Include="Images\nature7.JPG" />
-    <Content Include="Images\nature8.JPG" />
-    <Content Include="Images\nature9.JPG" />
-    <Content Include="Images\SP_A0144.jpg" />
-    <Content Include="Images\SP_A0145.jpg" />
-    <Content Include="Images\SP_A0146.jpg" />
-    <Content Include="Images\SP_A0147.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Properties\PublishProfiles\SampleMVC.pubxml" />
+    <None Include="Properties\PublishProfiles\WebApp.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -295,12 +266,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\Form.cshtml" />
-    <Content Include="Views\Home\_form.cshtml" />
-    <Content Include="Views\Home\_QuizEnd.cshtml" />
-    <Content Include="Views\Home\HTMLForm.cshtml" />
-    <Content Include="Views\Error\NotFound.cshtml" />
-    <Content Include="Views\Home\FileUpload.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -329,9 +294,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>52097</DevelopmentServerPort>
+          <DevelopmentServerPort>57379</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:52097/</IISUrl>
+          <IISUrl>http://localhost:57379/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
